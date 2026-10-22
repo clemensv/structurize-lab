@@ -11,34 +11,16 @@ You need Git and Python 3.12 or later. Use a terminal in the repository root for
 ```sh
 git clone https://github.com/clemensv/structurize-lab.git
 cd structurize-lab
-python -m venv .venv
-```
-
-Activate the environment in PowerShell:
-
-```powershell
-.venv/Scripts/Activate.ps1
-```
-
-Or in bash on Linux or macOS:
-
-```sh
-source .venv/bin/activate
-```
-
-If your system calls Python `python3`, use that name when creating the environment. On Windows, `py -3` is another option if the Python launcher is installed.
-
-Install the tools and create the output directory:
-
-```sh
-python -m pip install -r requirements.txt
+pip install structurize
 python -c "from pathlib import Path; Path('output').mkdir(exist_ok=True)"
 structurize --help
 ```
 
-The requirements pin Structurize and the JSON Structure SDK. The SDK checks schemas; `structurize validate` checks data instances. These are different questions: is the contract well formed, and does this document satisfy it?
+Installing Structurize also installs its dependencies, including the JSON Structure SDK. No separate dependency installation is needed.
 
-If PowerShell blocks activation, you can skip it and invoke `.venv/Scripts/python.exe` and `.venv/Scripts/structurize.exe` directly instead of `python` and `structurize`. No execution-policy change is required.
+If your system calls Python `python3`, use that name for the Python commands in this lab.
+
+The SDK checks schemas; `structurize validate` checks data instances. These are different questions: is the contract well formed, and does this document satisfy it?
 
 ## Your Starting Files
 

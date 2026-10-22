@@ -1,2 +1,0 @@
-structurize==3.9.3
-json-structure==0.8.0
